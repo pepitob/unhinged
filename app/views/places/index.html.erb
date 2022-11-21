@@ -2,6 +2,7 @@
 
 <% @places.each do |place| %>
   <%= place.name %>
+  <%= link_to "Delete", place_path(place), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %>
   <%= link_to "Edit venue", edit_place_path(place.id) %>
 <% end %>
 
