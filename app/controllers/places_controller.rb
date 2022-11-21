@@ -21,9 +21,23 @@ class PlacesController < ApplicationController
     end
   end
 
+  def edit
+    @place = Place.find(params[:id])
+  end
+
+  def update
+    @place = Place.find(params[:id])
+    if @place.update(list_params)
+      redirect_to places_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def list_params
     params.require(:place).permit(:name, :category, :description, :capacity, :location, :price)
   end
+
 end
