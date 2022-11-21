@@ -27,7 +27,7 @@ class PlacesController < ApplicationController
     @place.destroy
     redirect_to places_path
   end
-  
+
   def edit
     @place = Place.find(params[:id])
   end
@@ -39,7 +39,7 @@ class PlacesController < ApplicationController
     else
       render :new
     end
-  
+  end
 
   def show
     @place = Place.find(params[:id])
