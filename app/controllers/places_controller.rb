@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
     @place = Place.new(list_params)
     @place.user = current_user
     if @place.save
-      redirect_to places_path
+      redirect_to @place
     else
       render :new
     end
@@ -32,6 +32,10 @@ class PlacesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @place = Place.find(params[:id])
   end
 
   private
