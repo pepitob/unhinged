@@ -1,9 +1,9 @@
 <h1>EPIC PARTY PLACES</h1>
 
 <% @places.each do |place| %>
-<%= place.name %>
-<%= link_to "Delete", place_path(place), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %>
-
+  <%= place.name %>
+  <%= link_to "Delete", place_path(place), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} %>
+  <%= link_to "Edit venue", edit_place_path(place.id) %>
 <% end %>
 
 <%= link_to "Create new venue", new_place_path %>
