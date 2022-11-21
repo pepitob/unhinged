@@ -4,15 +4,20 @@ class PlacesController < ApplicationController
   end
 
   def new
-    @place = Place.new
+    if current_user
+      @place = Place.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
     @place = Place.new(list_params)
+    @place.user = current_user
     if @place.save
-      redirect_to places_path, notice: "The listing was successfully created."
+      redirect_to places_path
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 

@@ -1,34 +1,12 @@
 <h1>Add a new venue</h1>
 
-<%= simple_form_for(@place) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= simple_form_for @place do |f| %>
 
-  <div class="form-inputs">
     <%= f.input :name %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :category, :collection => %w[House Mansion Boat Limo Castle Island Other] %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :description %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :capacity %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :location %>
-  </div>
-
-  <div class="form-inputs">
     <%= f.input :price %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.submit :submit, class: "btn btn-primary", data: {turbo: false} %>
 <% end %>
