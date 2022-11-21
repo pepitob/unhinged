@@ -1,12 +1,12 @@
-<h1>Add a new venue</h1>
-
-<%= simple_form_for @place do |f| %>
-
-    <%= f.input :name %>
-    <%= f.input :category, :collection => %w[House Mansion Boat Limo Castle Island Other] %>
-    <%= f.input :description %>
-    <%= f.input :capacity %>
-    <%= f.input :location %>
-    <%= f.input :price %>
-  <%= f.submit :submit, class: "btn btn-primary", data: {turbo: false} %>
-<% end %>
+<div class="container">
+  <h1>Add a new venue <%= @place.name %></h1>
+  <%= simple_form_for @place do |f| %>
+      <%= f.input :name %>
+      <%= f.input :category, :collection => %w[House Mansion Boat Limo Castle Island Other] %>
+      <%= f.input :description %>
+      <%= f.input :capacity %>
+      <%= f.input :location %>
+      <%= f.input :price %>
+    <%= f.submit :submit, class: "btn btn-primary", data: {turbo: false} %>
+  <% end %>
+</div>

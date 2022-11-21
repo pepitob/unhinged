@@ -1,0 +1,36 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width: 200px;
+  h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+  }
+  .icons{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    font-size: 15px;
+    height: 10%;
+    a{
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.34);
+      padding: 3px;
+      transition: 0.1s;
+      &:hover{
+        color: white;
+      }
+      }
+
+  }
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+}
