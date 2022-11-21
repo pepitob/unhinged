@@ -2,6 +2,7 @@
 
 <% @places.each do |place| %>
   <%= place.name %>
+  <%= link_to "Edit venue", edit_place_path(place.id) %>
 <% end %>
 
 <%= link_to "Create new venue", new_place_path %>
