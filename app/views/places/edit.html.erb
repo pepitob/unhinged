@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Add a new venue <%= @place.name %></h1>
+  <h1>Change venue <%= @place.name %></h1>
   <%= simple_form_for @place do |f| %>
       <%= f.input :name %>
       <%= f.input :category, :collection => %w[House Mansion Boat Limo Castle Island Other] %>

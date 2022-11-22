@@ -1,0 +1,10 @@
+<h1><%= @place.name %></h1>
+
+<h3><%= @place.category %></h3>
+<h3>Capacity: <%= @place.capacity %></h3>
+<h3><%= @place.location %></h3>
+<h3>Price per day:<%= @place.price %> €</h3>
+
+<p><%= @place.description %></p>
+
+<%= link_to "Go back", places_path %>

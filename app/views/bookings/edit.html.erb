@@ -1,0 +1,8 @@
+<h4>Edit Booking</h4>
+<%= simple_form_for [@place, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :number_of_people %>
+  <%= f.association :place %>
+  <%= f.button :submit %>
+<% end %>
