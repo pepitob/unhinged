@@ -2,6 +2,7 @@ class Place < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
   belongs_to :user
+  has_many_attached :photos
 
   validates :name, presence: true, uniqueness: true
   validates :category, presence: true, inclusion: { in: %w(House Mansion Boat Limo Castle Island Other )}

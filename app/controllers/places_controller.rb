@@ -21,7 +21,6 @@ class PlacesController < ApplicationController
     end
   end
 
-
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
@@ -48,7 +47,6 @@ class PlacesController < ApplicationController
   private
 
   def list_params
-    params.require(:place).permit(:name, :category, :description, :capacity, :location, :price)
+    params.require(:place).permit(:name, :category, :description, :capacity, :location, :price, photos: [])
   end
-
 end
