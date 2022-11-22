@@ -6,5 +6,5 @@
 <h3>Price per day:<%= @place.price %> €</h3>
 
 <p><%= @place.description %></p>
-
+<%= link_to "book this place", new_place_booking_path(@place) %>
 <%= link_to "Go back", places_path %>
