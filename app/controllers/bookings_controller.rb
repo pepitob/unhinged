@@ -20,27 +20,29 @@ class BookingsController < ApplicationController
     @nights = (@booking.end_date - @booking.start_date).to_i
     @booking.total_price = @booking.place.price * @nights
     if @booking.save
-      redirect_to place_bookings_path(@booking.place.id)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-   def edit
+  def edit
     @booking = Booking.find(params[:id])
   end
 
   def update
+    @booking = Booking.find(params[:id])
     @booking.place = @place
+    @booking.user = current_user
     @nights = (@booking.end_date - @booking.start_date).to_i
-    @booking.total_price = @nights * price
+    @booking.total_price = @place.price * @nights
     if @booking.update(booking_params)
-      redirect_to booking_path
+      redirect_to bookings_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
-  
+
   private
 
   def booking_params
@@ -50,5 +52,4 @@ class BookingsController < ApplicationController
   def set_place
     @place = Place.find(params[:place_id])
   end
-end
 end
