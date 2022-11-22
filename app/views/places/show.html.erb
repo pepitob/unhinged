@@ -1,9 +1,14 @@
 <h1><%= @place.name %></h1>
 
+<% @place.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <h3><%= @place.category %></h3>
 <h3>Capacity: <%= @place.capacity %></h3>
 <h3><%= @place.location %></h3>
 <h3>Price per day:<%= @place.price %> €</h3>
+
 
 <p><%= @place.description %></p>
 <%= link_to "book this place", new_place_booking_path(@place) %>
