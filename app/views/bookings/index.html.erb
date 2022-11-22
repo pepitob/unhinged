@@ -1,0 +1,7 @@
+<% @bookings.each do |booking| %>
+  <%= booking.place.name %>
+  <p>From <%= booking.start_date %></p>
+  <p>to: <%= booking.end_date %></p>
+  <p>people: <%= booking.number_of_people %></p>
+  <p>total price: <%= booking.total_price %></p>
+<% end %>
