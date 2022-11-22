@@ -41,5 +41,4 @@
 *.swp
 .DS_Store
 .env*
-.env*
 yarn.lock

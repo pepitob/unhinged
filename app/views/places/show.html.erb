@@ -11,5 +11,5 @@
 
 
 <p><%= @place.description %></p>
-
+<%= link_to "book this place", new_place_booking_path(@place) %>
 <%= link_to "Go back", places_path %>
