@@ -25,11 +25,11 @@
     height: 10%;
     a{
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.34);
+      color: white;
       padding: 3px;
       transition: 0.1s;
       &:hover{
-        color: white;
+        color: grey;
       }
     }
 
@@ -56,5 +56,16 @@
 p{
   font-size: 15px;
   color: grey;
+}
 
+.newrandomclass{
+  a{
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+  transition: 0.1s;
+    &:hover{
+      color: grey;
+    }
+  }
 }
