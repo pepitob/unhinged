@@ -18,6 +18,11 @@
                                     <p class=" title uppercase tracking-wide text-sm font-bold text-gray-700"><%= link_to place.name, place_path(place.id) %></p>
                                     <p class="text-3xl text-gray-900"> <i class="fa-solid fa-tag"></i> <%=place.price %> €/night</p>
                                     <p class="text-gray-700"><i class="fa-solid fa-location-dot"></i> <%= place.location%></p>
+                                    <div class="newrandomclass">
+                                      <%= link_to edit_place_path(place.id) do %><i class="fa-solid fa-pencil"></i><% end %>
+                                      <%= link_to place_path(place), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} do %><i class="fa-solid fa-trash-can"></i><% end %>
+                                    </div>
+                                </div>
                           </div>
                       </div>
                   </div>
