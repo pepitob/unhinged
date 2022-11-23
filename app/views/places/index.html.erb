@@ -32,4 +32,8 @@
       </div>
       <%= link_to new_place_path, class:'mt-5 btn btn-light btn-sm border' do %><i class="fa-solid fa-circle-plus"></i> Create new venue<% end %>
   </div>
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
