@@ -6,10 +6,10 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <%= image_tag("carousel_main.png", class: "d-sm-block w-100") %>
+      <%= image_tag("carousel_main.png", class: "picture-carousel d-sm-block w-100") %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("carousel_2.png", class: "d-sm-block w-100" ) %>
+      <%= image_tag("carousel_2.png", class: "picture-carousel d-sm-block w-100" ) %>
     </div>
     <div class="carousel-item">
       <%= image_tag("carousel_3.png", class: "d-sm-block w-100" ) %>
@@ -30,7 +30,6 @@
     <h1>Epic Locals<strong>tech skills</strong>  <strong>creative people</strong>!</h1>
     <h2>Let's get </strong>UNHING'D<strong></h2>
     <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-ghost" href="#">Get Started!</a>
-
+    <%= link_to "Let's Party!", places_path, :class => "btn btn-ghost"%>
   </div>
 </div>
