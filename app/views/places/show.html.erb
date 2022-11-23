@@ -1,15 +1,49 @@
-<h1><%= @place.name %></h1>
+<div class="container">
+  <h1><%= @place.name %></h1>
+</div>
 
-<% @place.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <% count = 1 %>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"  class="active" aria-current="true" aria-label="Slide 1"></button>
+    <% while count < @place.photos.length  %> <%  %>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%=count%>" aria-label="Slide <%=count+1%>"></button>
+      <% count +=1 %>
+    <% end %>
+  </div>
+  <div class="carousel-inner">
 
-<h3><%= @place.category %></h3>
-<h3>Capacity: <%= @place.capacity %></h3>
-<h3><%= @place.location %></h3>
-<h3>Price per day:<%= @place.price %> €</h3>
+  <div class="carousel-item active">
+    <%= cl_image_tag @place.photos.first.key, height: 300, width: 400, crop: :fill, class: "picture-carousel d-sm-block w-100" %>
+  </div>
+
+    <% @place.photos[1..].each do |photo| %>
+      <div class="carousel-item">
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "picture-carousel d-sm-block w-100" %>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
-<p><%= @place.description %></p>
-<%= link_to "book this place", new_place_booking_path(@place) %>
-<%= link_to "Go back", places_path %>
+<div class= "container mb-3 mt-3">
+  <h3><%= @place.category %> | <%= @place.name %></h3>
+  <p><i class="fa-solid fa-location-dot"></i> <%= @place.location %></p>
+  <p> <i class="fa-solid fa-users"></i> <strong>Capacity:</strong> <%= @place.capacity %></p>
+  <p> <i class="fa-solid fa-tag"></i> <strong>Price per day:</strong> <%= @place.price %> €/night</p>
+  <div class="mb-3" style="border-top: 1px solid rgba(222, 214, 214, 0.6);" >
+    <h3 class="mt-3">Description</h3>
+    <p><%= @place.description %></p>
+  </div>
+  <%= link_to "book this place", new_place_booking_path(@place), class:"btn btn-ghost-black" %>
+  <%= link_to "Go back", places_path, class:"btn btn-ghost-black"%>
+  <br>
+</div>
