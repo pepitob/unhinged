@@ -6,5 +6,10 @@
   <p><%= booking.end_date %></p>
   <p><%= booking.total_price %></p>
   <p><%= booking.number_of_people %></p>
-  <%= link_to "Edit booking", edit_place_booking_path(booking.place, booking) %>
+  <%= link_to "Edit booking", edit_booking_path(booking) %>
+  <%= link_to "Cancel booking",
+  booking_path(booking),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel?"} %>
 <% end %>
+<br>
+<%= link_to "Go back to all places", places_path %>

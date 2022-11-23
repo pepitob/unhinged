@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
-  before_action :set_place, only: %i[new create edit update]
+  before_action :set_place, only: %i[new create]
+  before_action :set_booking, only: %i[edit update destroy]
+
 
   def index
     @bookings = Booking.all
@@ -27,20 +29,21 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @booking = Booking.find(params[:id])
   end
 
   def update
-    @booking = Booking.find(params[:id])
-    @booking.place = @place
-    @booking.user = current_user
     @nights = (@booking.end_date - @booking.start_date).to_i
-    @booking.total_price = @place.price * @nights
+    @booking.total_price = @booking.place.price * @nights
     if @booking.update(booking_params)
       redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
@@ -51,5 +54,9 @@ class BookingsController < ApplicationController
 
   def set_place
     @place = Place.find(params[:place_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
