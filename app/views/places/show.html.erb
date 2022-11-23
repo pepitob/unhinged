@@ -12,4 +12,6 @@
 
 <p><%= @place.description %></p>
 <%= link_to "book this place", new_place_booking_path(@place) %>
+<%= link_to "Delete this place", place_path(@place),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this listing?"}  %>
 <%= link_to "Go back", places_path %>
