@@ -1,7 +1,5 @@
 <div class="container mt-4">
   <h1>EPIC PARTY PLACES</h1>
-
-
   <div class="flex-container d-flex flex-wrap flex-direction-column">
     <% @places.each do |place| %>
         <div class="antialiased bg-gray-200 font-sans">
@@ -17,9 +15,9 @@
                                   </div>
                                 </div>
                                 <div class="p-4">
-                                    <p class="uppercase tracking-wide text-sm font-bold text-gray-700"><%= link_to place.name, place_path(place.id) %></p>
-                                    <p class="text-3xl text-gray-900"><%= link_to place.price, place_path(place.id) %></p>
-                                    <p class="text-gray-700"><%= link_to place.location, place_path(place.id) %></p>
+                                    <p class=" title uppercase tracking-wide text-sm font-bold text-gray-700"><%= link_to place.name, place_path(place.id) %></p>
+                                    <p class="text-3xl text-gray-900"> <i class="fa-solid fa-tag"></i> <%=place.price %> €/night</p>
+                                    <p class="text-gray-700"><i class="fa-solid fa-location-dot"></i> <%= place.location%></p>
                           </div>
                       </div>
                   </div>
