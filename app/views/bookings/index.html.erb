@@ -1,4 +1,4 @@
-<h1>My Bookings</h1>
+<h1 class="bookings-title">My Bookings</h1>
 
 <% @bookings.each do |booking| %>
   <% nights = (booking.end_date - booking.start_date).to_i %>

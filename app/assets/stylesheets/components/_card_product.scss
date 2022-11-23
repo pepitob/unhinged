@@ -6,13 +6,18 @@
   display: flex;
   align-items: center;
   width: 900px;
-  margin: 20px;
+  margin: 10px auto;
 }
 
 .card-product img {
   height: 100%;
   width: 120px;
   object-fit: cover;
+}
+
+.bookings-title {
+  text-align: center;
+  margin: 20px;
 }
 
 .card-product h2 {
