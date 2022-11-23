@@ -6,13 +6,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <%= image_tag("carousel_main.png", class: "d-sm-block w-100") %>
+      <%= image_tag("carousel_main.png", class: "picture-carousel d-sm-block w-100") %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("carousel_2.png", class: "d-sm-block w-100" ) %>
+      <%= image_tag("dark_carousel_2.png", class: "picture-carousel d-sm-block w-100" ) %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("carousel_3.png", class: "d-sm-block w-100" ) %>
+      <%= image_tag("dark_carousel_3.png", class: "d-sm-block w-100" ) %>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -27,10 +27,9 @@
 
 <div class="banner">
   <div class="container">
-    <h1>Epic Locals<strong>tech skills</strong>  <strong>creative people</strong>!</h1>
+    <h1>Epic Locations | Easy & simple | To have Fun </h1>
     <h2>Let's get </strong>UNHING'D<strong></h2>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-ghost" href="#">Get Started!</a>
-
+    <p>Enjoy the best party venues arround the world</p>
+    <%= link_to "Let's Party!", places_path, :class => "btn btn-ghost"%>
   </div>
 </div>
