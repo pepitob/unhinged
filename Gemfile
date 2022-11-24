@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4"
 gem "cloudinary"
 
 # Gem to keep our Cloudinary key secret
-gem "dotenv-rails", groups: [:development, :test]
+# gem "dotenv-rails", groups: [:development, :test]
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -90,3 +90,4 @@ group :test do
 end
 
 gem "geocoder"
+gem "pg_search"
