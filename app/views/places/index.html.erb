@@ -1,12 +1,13 @@
 <div class="container mt-4 mb-4">
   <h1 style="text-align: center;">EPIC PARTY PLACES</h1>
+
   <%= form_with url: places_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "form-control", id:"search",
     placeholder: "Find your next epic party venue!"
   %>
-  <%= submit_tag "Let's Party!", class: "btn btn-ghost" %>
+  <%= submit_tag "Let's Party!", class: "btn btn-ghost-search" %>
   <% end %>
 </div>
 
@@ -25,7 +26,7 @@
               <h2><%= place.name %></h2>
               <p><i class="fa-solid fa-location-dot"></i> <%= place.location %></p>
               <p><i class="fa-solid fa-users"></i> <%= place.capacity %></p>
-              <p><strong><i class="fa-solid fa-tag"></i> <%= place.price %> €/night </strong></p>
+              <p class="price"><strong><i class="fa-solid fa-tag"></i> <%= place.price %> €/night </strong></p>
             </div>
             <div class="icons">
               <%= link_to edit_place_path(place.id) do %><i class="fa-solid fa-pencil"></i><% end %>

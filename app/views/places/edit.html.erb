@@ -1,13 +1,7 @@
-<div class="container">
-  <h1>Change venue <%= @place.name %></h1>
-  <%= simple_form_for @place do |f| %>
-      <%= f.input :name %>
-      <%= f.input :category, :collection => %w[House Mansion Boat Limo Castle Island Other] %>
-      <%= f.input :description %>
-      <%= f.input :capacity %>
-      <%= f.input :location %>
-      <%= f.input :price %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit :submit, class: "btn btn-primary", data: {turbo: false} %>
-  <% end %>
+<div class="wrapper-party">
+  <%= image_tag "1form.png", class:"image_form"%>
+  <div class="container party">
+    <h1 style="text-align: center;">Edit your <strong><%= @place.name %></strong></h1>
+    <%= render "form", place: @place %>
+  </div>
 </div>
