@@ -1,6 +1,5 @@
 <div class="container mt-4 mb-4">
   <h1 style="text-align: center;">EPIC PARTY PLACES</h1>
-  <div class="container mt-4 d-flex justify-content-center align-content-between flex-wrap">
   <%= form_with url: places_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
@@ -9,6 +8,7 @@
   %>
   <%= submit_tag "Let's Party!", class: "btn btn-ghost" %>
   <% end %>
+  <div class="container mt-4 d-flex justify-content-center align-content-between flex-wrap">
     <% @places.each do |place| %>
       <%= link_to place_path(place), class:"text-decoration-none" do %>
         <div class="card-trip">
