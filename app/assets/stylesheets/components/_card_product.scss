@@ -1,17 +1,29 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 170px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 900px;
+  width: 950px;
   margin: 10px auto;
+  border-radius: 5px;
+}
+
+.card-product:hover {
+  transform: scale(1.025);
+  transition: 1s;
+  .btn-sm {
+    background-color: #01fdfd;
+  }
+  .btn-sm1 {
+    background-color: #fd02fd;
+  }
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 170px;
   object-fit: cover;
 }
 
@@ -21,13 +33,13 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 27px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
