@@ -67,11 +67,9 @@ end
 # delete if we have errors :)
 # gem "dotenv-rails", groups: [:development, :test]
 gem "devise"
+
 gem "flatpickr"
 gem "pg_search"
-
-
-
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]

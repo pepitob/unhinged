@@ -1,0 +1,8 @@
+  <%= simple_form_for [@place, @booking] , class:"container" do |f| %>
+    <div class="row">
+      <div class="col"><%= f.input :start_date, as: :string, input_html: { data: { controller: "flatpickr" } } %></div>
+      <div class="col"><%= f.input :end_date, as: :string, input_html: { data: { controller: "flatpickr" } }%></div>
+    </div>
+    <div class="row"><%= f.input :number_of_people %></div>
+    <div class="d-grid"><%= f.submit "Book Party!", class: "btn btn-ghost-black" %></div>
+  <% end %>

@@ -8,7 +8,10 @@
   %>
   <%= submit_tag "Let's Party!", class: "btn btn-ghost" %>
   <% end %>
-  <div class="container mt-4 d-flex justify-content-center align-content-between flex-wrap">
+</div>
+
+<div class="d-flex m-1">
+  <div class="container m-1 d-flex justify-content-center align-content-between flex-wrap">
     <% @places.each do |place| %>
       <%= link_to place_path(place), class:"text-decoration-none" do %>
         <div class="card-trip">
@@ -34,10 +37,9 @@
     <% end %>
   </div>
 
-  <%= link_to new_place_path, class:'mt-5 btn btn-ghost-black' do %><i class="fa-solid fa-circle-plus"></i> Add new awsome place<% end %>
-
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div id="map" style="width: 50%; height: 800px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>

@@ -15,7 +15,8 @@ class PlacesController < ApplicationController
       {
         lat: place.latitude,
         lng: place.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { place: place })
+        info_window: render_to_string(partial: "info_window", locals: { place: place }),
+        image_url: helpers.asset_url("pin2.png")
       }
     end
   end
@@ -59,6 +60,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @booking = Booking.new
   end
 
   private
