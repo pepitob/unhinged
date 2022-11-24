@@ -25,6 +25,15 @@
   </button>
 </div>
 
+<%= form_with url: places_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your next epic party venue!"
+  %>
+  <%= submit_tag "Let's Party!", class: "btn btn-ghost" %>
+<% end %>
+
 <div class="banner">
   <div class="container">
     <h1>Epic Locations | Get wasted | Have Fun </h1>
