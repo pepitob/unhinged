@@ -1,5 +1,6 @@
-<div class="container mt-4">
-  <h1>EPIC PARTY PLACES</h1>
+<div class="container mt-4 mb-4">
+  <h1 style="text-align: center;">EPIC PARTY PLACES</h1>
+  <div class="container mt-4 d-flex justify-content-center align-content-between flex-wrap">
   <%= form_with url: places_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
@@ -8,31 +9,35 @@
   %>
   <%= submit_tag "Let's Party!", class: "btn btn-ghost" %>
   <% end %>
-  <div class="flex-container d-flex flex-wrap flex-direction-column">
     <% @places.each do |place| %>
-        <div class="antialiased bg-gray-200 font-sans">
-            <div class="max-w-6xl mx-auto">
-                <div class="flex items-center justify-center min-h-screen">
-                    <div class="max-w-sm w-full sm:w-1/2 lg:w-1/3 py-6 px-3">
-                        <div class="bg-white shadow-xl rounded-lg overflow-hidden">
-                            <div class="bg-cover bg-center h-56 p-4" style="background-image: url('<%= cl_image_path place.photos.first.key, height: 300, crop: :fill %>')">
-                                <div class="flex justify-end">
-                                    <svg class="h-6 w-6 text-white fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path></path>
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div class="p-4">
-                                    <p class=" title uppercase tracking-wide text-sm font-bold text-gray-700"><%= link_to place.name, place_path(place.id) %></p>
-                                    <p class="text-3xl text-gray-900"> <i class="fa-solid fa-tag"></i> <%=place.price %> €/night</p>
-                                    <p class="text-gray-700"><i class="fa-solid fa-location-dot"></i> <%= place.location%></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+      <%= link_to place_path(place), class:"text-decoration-none" do %>
+        <div class="card-trip">
+          <% if place.photos.attached? %>
+            <img src="<%= cl_image_path place.photos.first.key, height: 300, crop: :fill %>">
+          <% else %>
+            <%= image_tag("dark_carousel_2.png") %>
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= place.name %></h2>
+              <p><i class="fa-solid fa-location-dot"></i> <%= place.location %></p>
+              <p><i class="fa-solid fa-users"></i> <%= place.capacity %></p>
+              <p><strong><i class="fa-solid fa-tag"></i> <%= place.price %> €/night </strong></p>
+            </div>
+            <div class="icons">
+              <%= link_to edit_place_path(place.id) do %><i class="fa-solid fa-pencil"></i><% end %>
+              <%= link_to place_path(place), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} do %><i class="fa-solid fa-trash-can"></i><% end %>
+            </div>
           </div>
+        </div>
+      <% end %>
     <% end %>
-      </div>
-      <%= link_to new_place_path, class:'mt-5 btn btn-light btn-sm border' do %><i class="fa-solid fa-circle-plus"></i> Create new venue<% end %>
   </div>
+
+  <%= link_to new_place_path, class:'mt-5 btn btn-ghost-black' do %><i class="fa-solid fa-circle-plus"></i> Add new awsome place<% end %>
+
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

@@ -66,10 +66,11 @@ end
 
 # delete if we have errors :)
 # gem "dotenv-rails", groups: [:development, :test]
-
 gem "devise"
 gem "flatpickr"
 gem "pg_search"
+
+
 
 
 group :development do
@@ -92,3 +93,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "geocoder"
+gem "pg_search"
