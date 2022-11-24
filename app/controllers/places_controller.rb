@@ -54,20 +54,6 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
 
-  def search
-    if params[:query].present?
-      sql_query = <<~SQL
-        places.name @@ :query
-        OR places.description @@ :query
-        OR places.location @@ :query
-        OR places.category @@ :query
-      SQL
-      @places = Place.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @places = Place.all
-    end
-  end
-
   private
 
   def list_params

@@ -1,5 +1,13 @@
 <div class="container mt-4">
   <h1>EPIC PARTY PLACES</h1>
+  <%= form_with url: places_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your next epic party venue!"
+  %>
+  <%= submit_tag "Let's Party!", class: "btn btn-ghost" %>
+  <% end %>
   <div class="flex-container d-flex flex-wrap flex-direction-column">
     <% @places.each do |place| %>
         <div class="antialiased bg-gray-200 font-sans">
