@@ -24,6 +24,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
+      @booking.start_date = @booking.start_date
+      @booking.end_date = @booking.end_date
       render :new, status: :unprocessable_entity
     end
   end
