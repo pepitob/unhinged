@@ -67,7 +67,8 @@ end
 # delete if we have errors :)
 # gem "dotenv-rails", groups: [:development, :test]
 gem "devise"
-gem "flatpickr"
+
+
 
 
 
