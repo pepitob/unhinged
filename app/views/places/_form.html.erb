@@ -1,0 +1,15 @@
+<div class="container ">
+  <%= simple_form_for @place do |f| %>
+      <%= f.input :name %>
+      <%= f.input :category, :collection => %w[House Mansion Boat Limo Castle Island Other] %>
+      <%= f.input :description %>
+      <%= f.input :capacity %>
+      <%= f.input :location,
+        input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+      %>
+      <%= f.input :price %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Submit Epic Venue", class: "btn btn-ghost", data: {turbo: false} %>
+  <% end %>
+</div>

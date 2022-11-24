@@ -56,3 +56,21 @@
     border: 2px solid #01ffff;
   }
 }
+
+.btn-ghost-search {
+  color: white;
+  border: 2px solid white;
+  padding: 8px 24px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-left: transparent;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-search:hover {
+  // opacity: 1;
+  color: #01ffff;
+  border: 2px solid #01ffff;
+}
