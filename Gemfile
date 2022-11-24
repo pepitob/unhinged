@@ -66,9 +66,10 @@ end
 
 # delete if we have errors :)
 # gem "dotenv-rails", groups: [:development, :test]
-gem "cloudinary"
 gem "devise"
 gem "flatpickr"
+
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -87,3 +88,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "geocoder"
