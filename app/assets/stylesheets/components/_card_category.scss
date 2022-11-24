@@ -57,15 +57,3 @@ p{
   font-size: 15px;
   color: grey;
 }
-
-.newrandomclass{
-  a{
-  text-decoration: none;
-  color: white;
-  padding: 3px;
-  transition: 0.1s;
-    &:hover{
-      color: grey;
-    }
-  }
-}
