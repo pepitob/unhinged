@@ -10,4 +10,11 @@ class Place < ApplicationRecord
   validates :capacity, presence: true, numericality: { only_integer: true, greater_tan: 5 }
   validates :location, presence: true
   validates :price, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_places,
+  against: %i[name description location category],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end

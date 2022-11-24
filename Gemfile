@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4"
 gem "cloudinary"
 
 # Gem to keep our Cloudinary key secret
-gem "dotenv-rails", groups: [:development, :test]
+# gem "dotenv-rails", groups: [:development, :test]
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -66,9 +66,11 @@ end
 
 # delete if we have errors :)
 # gem "dotenv-rails", groups: [:development, :test]
-gem "cloudinary"
+
 gem "devise"
 gem "flatpickr"
+gem "pg_search"
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -80,6 +82,9 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem "geocoder"
+
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
