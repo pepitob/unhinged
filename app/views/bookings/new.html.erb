@@ -1,9 +1,4 @@
-<h1>New booking</h1>
-<%= simple_form_for [@place, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%#<%= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
-  <%#<%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
-  <%= f.input :number_of_people %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="container justify-content-center mb-4">
+  <h1 class="text-center">New booking</h1>
+  <%= render "form", booking: @booking %>
+</div>

@@ -1,22 +1,23 @@
 
-<div>
+<div class="container">
   <h1 class="bookings-title">My Bookings</h1>
-
-  <% @bookings.each do |booking| %>
-    <% nights = (booking.end_date - booking.start_date).to_i %>
-    <div class="card-product">
-      <img src=<%= cl_image_path booking.place.photos.first.key, height: 300, crop: :fill  %> />
-      <div class="card-product-infos">
-        <h2><%= booking.place.name %></h2>
-        <p><%= nights %> Night<%= "s" if nights > 1 %> - From <%= booking.start_date %> to <%= booking.end_date %></p>
-        <p><%= booking.number_of_people %> People</p>
-        <p><strong><%= number_to_currency(booking.total_price) %></strong></p>
-      </div>
-      <div class="card-product-actions d-flex flex-column">
-        <%= link_to edit_booking_path(booking), class:'btn btn-light btn-sm border m-1' do %><i class="fa-solid fa-pencil"></i> Edit Booking<% end %>
-        <%= link_to booking_path(booking),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel?"}, class:'btn btn-light btn-sm border m-1' do %><i class="fa-solid fa-ban"></i> Cancel Booking<% end %>
-      </div>
+    <div class="bookings">
+      <% @bookings.each do |booking| %>
+        <% nights = (booking.end_date - booking.start_date).to_i %>
+        <div class="card-product">
+          <img src=<%= cl_image_path booking.place.photos.first.key, height: 300, crop: :fill  %> />
+          <div class="card-product-infos">
+            <h2><%= booking.place.name %></h2>
+            <p><%= nights %> Night<%= "s" if nights > 1 %> - From <%= booking.start_date %> to <%= booking.end_date %></p>
+            <p><%= booking.number_of_people %> People</p>
+            <p><strong><%= number_to_currency(booking.total_price) %></strong></p>
+          </div>
+          <div class="card-product-actions d-flex flex-column">
+            <%= link_to edit_booking_path(booking), class:'btn btn-light btn-sm border m-1' do %><i class="fa-solid fa-pencil"></i> Edit Booking<% end %>
+            <%= link_to booking_path(booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel?"}, class:'btn btn-light btn-sm border m-1' do %><i class="fa-solid fa-ban"></i> Cancel Booking<% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
 </div>

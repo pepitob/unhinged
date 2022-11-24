@@ -68,7 +68,8 @@ end
 # gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 gem "devise"
-gem "flatpickr"
+
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
