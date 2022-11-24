@@ -68,9 +68,8 @@ end
 # gem "dotenv-rails", groups: [:development, :test]
 gem "devise"
 
-
-
-
+gem "flatpickr"
+gem "pg_search"
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -82,6 +81,9 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem "geocoder"
+
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
