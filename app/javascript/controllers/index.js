@@ -15,3 +15,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import PriceChangeController from "./price_change_controller"
+application.register("price-change", PriceChangeController)
