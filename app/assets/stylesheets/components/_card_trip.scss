@@ -80,3 +80,34 @@
     opacity: 0.7;
   }
 }
+
+.mapboxgl-popup-content {
+  background-color: $our_black;
+  p {
+    font-size: 13px;
+    color: white;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  a{
+    color: white;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .price {
+    font-size: 15px ;
+    color: $turquesa;
+  }
+  .card-trip-infos {
+    margin-top: 3px;
+    object-fit: cover;
+    position: relative;
+    background-color: #3637395b;
+
+  }
+}

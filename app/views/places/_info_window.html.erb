@@ -1,18 +1,19 @@
 
-  <% if place.photos.attached? %>
-    <img src="<%= cl_image_path place.photos.first.key, height: 150, width: 220, crop: :fill %>">
-  <% else %>
-    <%= image_tag("dark_carousel_2.png") %>
-  <% end %>
-  <div class="card-trip-infos">
-    <div>
-      <h2 class="text-center"><%= link_to place.name, place_path(place), class: "text-decoration-none text-black" %></h2>
-      <p  class="text-center"><strong><%= place.category %></strong></p>
-      <p><i class="fa-solid fa-location-dot"></i> <%= place.location %></p>
-      <p><i class="fa-solid fa-users"></i> <%= place.capacity %></p>
-      <p><strong><i class="fa-solid fa-tag"></i> <%= place.price %> €/night </strong></p>
-      <div class="d-flex justify-content-center">
-        <%= link_to "Let's party!", place_path(place), class:"btn btn-ghost-black" %>
+<div class="card-trip-map">
+  <%# <%= link_to place_path(place), class:"text-decoration-none" do %>
+    <% if place.photos.attached? %>
+      <img src="<%= cl_image_path place.photos.first.key, height: 150, width: 220, crop: :fill %>">
+    <% else %>
+      <%= image_tag("dark_carousel_2.png") %>
+    <% end %>
+      <div class="card-trip-infos">
+        <h2 class="text-center"><%= place.name%></h2>
+        <p><i class="fa-solid fa-location-dot"></i> <%= place.location %></p>
+        <p><i class="fa-solid fa-users"></i> <%= place.capacity %></p>
+        <p><strong><i class="fa-solid fa-tag"></i> <%= place.price %> €/night </strong></p>
+        <div class="d-flex justify-content-center">
+          <%= link_to "Let's party!", place_path(place), class:"btn btn-ghost-black" %>
+        </div>
       </div>
-    </div>
+  <%# <% end %>
   </div>
