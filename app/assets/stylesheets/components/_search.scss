@@ -1,3 +1,4 @@
+
 #search {
     border: 2px solid rgba(255, 255, 255, 0.6);
     padding: 8px 24px;
@@ -5,4 +6,26 @@
     border-bottom-left-radius: 50px;
     font-weight: lighter;
     border-right:transparent;
+    width: 450px;
+    // display: flex;
+    // justify-content: center;
+  }
+
+  .search-div {
+    justify-content: center;
+  }
+
+
+  #search-home-div{
+    height: 45px;
+    justify-content: center;
+  }
+  #search-home {
+    border: 2px solid rgba(255, 255, 255, 1);
+    background-color: white;
+    border-radius: 2px;
+    padding: -3px;
+    font-weight: lighter;
+    border-right:transparent;
+    width: 600px;
   }

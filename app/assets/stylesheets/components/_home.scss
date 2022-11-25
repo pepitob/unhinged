@@ -1,0 +1,37 @@
+#home-logo{
+  color: white;
+  font-size: 200px;
+  text-align: center;
+  font-weight: 1000;
+  font-style: bold;
+  letter-spacing: 5px;
+  text-shadow: #01ffff -6px 0px , #ff00ff 6px 0px;
+}
+.wrapper-fijo{
+  //position: absolute;
+  margin-bottom: 100px;
+}
+
+.home-carusel{
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // align-content: center;
+  // z-index: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.floating-logo{
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // background-color:none;
+    // z-index: 100;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    z-index: 100;
+    top: 200px;
+
+}
