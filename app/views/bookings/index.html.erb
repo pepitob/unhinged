@@ -10,17 +10,17 @@
           <% else %>
             <%= image_tag("dark_carousel_2.png") %>
           <% end %>
-
           <div class="card-product-infos">
-            <h2><%= booking.place.name %></h2>
+            <h2><%= link_to booking.place.name, place_path(booking.place), class:"text-decoration-none" %></h2>
+            <p><i class="fa-solid fa-location-dot"></i> <%= booking.place.location %></p>
             <p><%= nights %> Night<%= "s" if nights > 1 %> - From <%= booking.start_date %> to <%= booking.end_date %></p>
-            <p><%= booking.number_of_people %> People</p>
-            <p><strong><%= number_to_currency(booking.total_price) %></strong></p>
+            <p><i class="fa-solid fa-users"></i> <%= booking.number_of_people %> guests</p>
+            <p class="pricebooking"><strong><i class="fa-solid fa-tag"></i> <%= number_to_currency(booking.total_price.to_i) %></strong></p>
           </div>
           <div class="card-product-actions d-flex flex-column">
-            <%= link_to edit_booking_path(booking), class:'btn btn-light btn-sm border m-1' do %><i class="fa-solid fa-pencil"></i> Edit Booking<% end %>
+            <%= link_to edit_booking_path(booking), class:'btn btn-cancel m-1' do %><i class="fa-solid fa-pencil"></i> Edit<% end %>
             <%= link_to booking_path(booking),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel?"}, class:'btn btn-light btn-sm border m-1' do %><i class="fa-solid fa-ban"></i> Cancel Booking<% end %>
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel?"}, class:'btn btn-cancel m-1' do %><i class="fa-solid fa-ban"></i> Cancel<% end %>
           </div>
         </div>
       <% end %>
