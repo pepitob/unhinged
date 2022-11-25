@@ -12,6 +12,7 @@
  }
 
 .image_form{
+  margin-top: 60px;
   width: 100vw;
   object-fit: contain;
   position: absolute;
@@ -27,6 +28,7 @@
     position: relative;
     border-radius: 5px;
     width: fit-content;
+    margin-top: 30px;
     h1{
       margin-top: 20px;
     }
@@ -45,7 +47,7 @@
     }
     .places-form{
       width: 800px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   }
 
