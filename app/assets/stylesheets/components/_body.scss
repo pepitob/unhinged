@@ -1,0 +1,15 @@
+body{
+  color: white;
+  background-color: $our_black;
+  p{
+    font-size: 18px;
+    color: white;
+    line-height: 1.4;
+    opacity: .7;
+  }
+  // to get the ungiged title   text-shadow:   #01ffff 1px 0px , #ff00ff -1px 0px;
+  h1{
+    letter-spacing: 15px;
+  }
+
+}

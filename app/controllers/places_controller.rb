@@ -61,6 +61,11 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+        lat: @place.latitude,
+        lng: @place.longitude,
+        image_url: helpers.asset_url("pin2.png")
+      }]
   end
 
   private
