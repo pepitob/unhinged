@@ -57,14 +57,40 @@
   }
 }
 
-.btn-sm {
-  background: none;
-  border-color: transparent;
-  border-width: 0ch;
+.btn-ghost-search {
+  color: white;
+  border: 2px solid white;
+  padding: 8px 24px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-left: transparent;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
-.btn-cancel {
-  color: transparent;
+.btn-ghost-search:hover {
+  // opacity: 1;
+  color: #01ffff;
+  border: 2px solid #01ffff;
+}
+
+.btn-ghost-fill {
+  color: white;
+  border: 2px solid white;
+  background-color: rgb(3, 165, 165);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-fill:hover {
+  // opacity: 1;
+//  color: #01ffff;
+  //text-shadow:   #01ffff 1px 0px , #ff00ff -1px 0px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background-color: transparent;
 }
 
 .btn-ghost-search-home {
