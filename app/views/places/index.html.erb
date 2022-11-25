@@ -26,7 +26,7 @@
               <h2><%= place.name %></h2>
               <p><i class="fa-solid fa-location-dot"></i> <%= place.location %></p>
               <p><i class="fa-solid fa-users"></i> <%= place.capacity %></p>
-              <p class="price"><strong><i class="fa-solid fa-tag"></i> <%= place.price %> €/night </strong></p>
+              <p class="price"><strong><i class="fa-solid fa-tag"></i> <%= place.price.to_i %> €/night </strong></p>
             </div>
             <div class="icons">
               <%= link_to edit_place_path(place.id) do %><i class="fa-solid fa-pencil"></i><% end %>

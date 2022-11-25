@@ -5,7 +5,12 @@
       <% @bookings.each do |booking| %>
         <% nights = (booking.end_date - booking.start_date).to_i %>
         <div class="card-product">
-          <img src=<%= cl_image_path booking.place.photos.first.key, height: 300, crop: :fill  %> />
+          <% if booking.place.photos.attached? %>
+            <img src=<%= cl_image_path booking.place.photos.first.key, height: 300, crop: :fill  %> />
+          <% else %>
+            <%= image_tag("dark_carousel_2.png") %>
+          <% end %>
+
           <div class="card-product-infos">
             <h2><%= booking.place.name %></h2>
             <p><%= nights %> Night<%= "s" if nights > 1 %> - From <%= booking.start_date %> to <%= booking.end_date %></p>
