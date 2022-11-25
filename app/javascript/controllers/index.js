@@ -18,3 +18,6 @@ application.register("map", MapController)
 
 import PriceChangeController from "./price_change_controller"
 application.register("price-change", PriceChangeController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
