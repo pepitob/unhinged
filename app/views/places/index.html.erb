@@ -1,7 +1,7 @@
 <div class="container mt-4 mb-4">
   <h1 style="text-align: center;">EPIC PARTY PLACES</h1>
 
-  <%= form_with url: places_path, method: :get, class: "d-flex" do %>
+  <%= form_with url: places_path, method: :get, class: "d-flex " do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control", id:"search",
