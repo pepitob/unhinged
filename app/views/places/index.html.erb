@@ -28,10 +28,12 @@
               <p><i class="fa-solid fa-users"></i> <%= place.capacity %></p>
               <p class="price"><strong><i class="fa-solid fa-tag"></i> <%= place.price.to_i %> €/night </strong></p>
             </div>
-            <div class="icons">
-              <%= link_to edit_place_path(place.id) do %><i class="fa-solid fa-pencil"></i><% end %>
-              <%= link_to place_path(place), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} do %><i class="fa-solid fa-trash-can"></i><% end %>
-            </div>
+            <% if current_user == place.user %>
+              <div class="icons">
+                <%= link_to edit_place_path(place.id) do %><i class="fa-solid fa-pencil"></i><% end %>
+                <%= link_to place_path(place), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete?"} do %><i class="fa-solid fa-trash-can"></i><% end %>
+              </div>
+            <% end %>
           </div>
         </div>
       <% end %>
