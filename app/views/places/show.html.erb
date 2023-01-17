@@ -15,12 +15,12 @@
   <div class="carousel-inner rounded-4">
     <% if @place.photos.attached? %>
       <div class="carousel-item active">
-        <%= cl_image_tag @place.photos.first.key, height: 448, class: "picture-carousel d-sm-block w-100" %>
+        <%= cl_image_tag @place.photos.first.key, height: 448, width: 640, crop: :fill, gravity: :auto, class: "picture-carousel d-sm-block w-100" %>
       </div>
 
       <% @place.photos[1..].each do |photo| %>
         <div class="carousel-item">
-          <%= cl_image_tag photo.key, height: 448, class: "picture-carousel d-sm-block w-100" %>
+          <%= cl_image_tag photo.key, height: 448, width: 640, crop: :fill, gravity: :auto, class: "picture-carousel d-sm-block w-100" %>
         </div>
       <% end %>
 
