@@ -35,7 +35,7 @@
           params[:query],
           class: "form-control",id:"search-home",
           placeholder: "Find your next epic party venue!",
-          data: { controller: 'typed-js'}
+          data: { controller: 'typed-js', action: "focus->typed-js#stopTyping click->typed-js#stopTyping"}
         %>
         <%= submit_tag "PARTY HARD", class: "btn btn-ghost-search-home" %>
       <% end %>
