@@ -7,31 +7,14 @@
   letter-spacing: 5px;
   text-shadow: #01ffff -6px 0px , #ff00ff 6px 0px;
 }
-.wrapper-fijo{
-  //position: absolute;
-  margin-bottom: 100px;
-}
 
-.home-carusel{
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // align-content: center;
-  // z-index: 0;
+#wrapper-fijo {
+  position: relative;
+}
+.floating-logo {
   position: absolute;
-  z-index: 0;
-}
-
-.floating-logo{
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // background-color:none;
-    // z-index: 100;
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-    z-index: 100;
-    top: 200px;
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
