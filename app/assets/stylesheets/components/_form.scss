@@ -57,8 +57,8 @@
   font-weight: lighter;
   width: fit-content;
   height: fit-content;
-  position: sticky;
   top: 10px;
+  padding: 5px;
   h1{
     //text-shadow:   #01ffff 2px 0px , #ff00ff -2px 0px;
     font-style: italic;
@@ -69,6 +69,18 @@
     font-weight: bold;
   }
 
+}
+@media(min-width:768px){
+	.new-booking{
+    position: sticky;
+	}
+}
+@media(max-width:768px){
+	.new-booking{
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	}
 }
 
 .search-form{
