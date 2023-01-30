@@ -1,6 +1,17 @@
 #map {
-  height: 100vh;
-  position: sticky;
-  top: 0;
   border-radius: 5px;
+}
+
+@media(min-width:992px) {
+  #map {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+	}
+}
+@media(max-width:991px) {
+  #map {
+    height: 60vh;
+    width: 100vw;
+	}
 }

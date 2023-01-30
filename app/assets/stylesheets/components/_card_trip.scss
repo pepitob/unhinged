@@ -2,18 +2,16 @@
   height: 350px;
   width: 300px;
   overflow: hidden;
-  //background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px;
   border-radius: 5px;
   display: flex;
-  //align-items: center;
   flex-direction: column;
-  // justify-content: space-between;
+  flex-grow: 1;
 
   img {
-    height: 200px;
-    width: 300px;
+    height: 60%;
+    width: 100%;
     object-fit: cover;
   }
 
