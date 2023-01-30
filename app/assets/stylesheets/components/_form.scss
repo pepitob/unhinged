@@ -8,8 +8,7 @@
   align-items: center;
   justify-content: center;
   align-content: center;
-  ;
- }
+}
 
 .image_form{
   margin-top: 60px;
@@ -20,59 +19,59 @@
 }
 
 .party{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0,0.6);
-    z-index: 100;
-    position: relative;
-    border-radius: 5px;
-    width: fit-content;
-    margin-top: 30px;
-    h1{
-      margin-top: 20px;
-    }
-
-    .register-form{
-      width: 500px;
-      margin-bottom: 20px;
-      a{
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.361);
-      }
-    }
-    .booking-form{
-      width: 500px;
-      margin-bottom: 20px;
-    }
-    .places-form{
-      width: 800px;
-      margin-bottom: 10px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0,0.6);
+  z-index: 100;
+  position: relative;
+  border-radius: 5px;
+  width: fit-content;
+  margin-top: 30px;
+  h1{
+    margin-top: 20px;
   }
 
-  .new-booking{
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 10px;
-    font-weight: lighter;
-    width: fit-content;
-    height: fit-content;
-    position: sticky;
-    top: 10px;
-    h1{
-      //text-shadow:   #01ffff 2px 0px , #ff00ff -2px 0px;
-      font-style: italic;
+  .register-form{
+    width: 500px;
+    margin-bottom: 20px;
+    a{
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.361);
     }
-    .total{
-      border-top: 1px solid rgba(255, 255, 255, 0.6);
-      padding: 10px;
-      font-weight: bold;
-    }
+  }
+  .booking-form{
+    width: 500px;
+    margin-bottom: 20px;
+  }
+  .places-form{
+    width: 800px;
+    margin-bottom: 10px;
+  }
+}
 
+.new-booking{
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  font-weight: lighter;
+  width: fit-content;
+  height: fit-content;
+  position: sticky;
+  top: 10px;
+  h1{
+    //text-shadow:   #01ffff 2px 0px , #ff00ff -2px 0px;
+    font-style: italic;
+  }
+  .total{
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    font-weight: bold;
   }
 
-  .search-form{
-    height: 50px;
-    margin-bottom: 5px;
-  }
+}
+
+.search-form{
+  height: 50px;
+  margin-bottom: 5px;
+}

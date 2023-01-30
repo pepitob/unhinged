@@ -97,13 +97,15 @@
   color: white;
   font-size: 40px;
   letter-spacing: 20px;
-  width: 500px;
   align-self: center;
-  // background-color: transparent;
-  // border: none;
-  //padding: 8px 24px;
-  //font-weight: lighter;
   transition: opacity 0.3s ease;
+}
+
+@media(max-width:768px){
+	.btn-ghost-search-home{
+    font-size: 25px;
+    letter-spacing: 5px;
+	}
 }
 
 .btn-ghost-search-home:hover {
