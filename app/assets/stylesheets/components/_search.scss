@@ -17,9 +17,12 @@
 
 
   #search-home-div{
-    height: 45px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    height: 45px;
   }
+
   #search-home {
     border: 2px solid rgba(255, 255, 255, 1);
     background-color: white;
@@ -27,5 +30,14 @@
     padding: -3px;
     font-weight: lighter;
     border-right:transparent;
-    width: 600px;
+  }
+
+  @media(max-width:768px){
+    #search-home{
+      height: 30px;
+    }
+    #search-home-div{
+      align-items: center;
+      height: 30px;
+    }
   }

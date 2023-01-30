@@ -29,17 +29,15 @@
   <div class="floating-logo container">
     <%# <%= image_tag "5_200_500.png", width: 1000, class:"" %>
     <h1 id="home-logo">UNHING'D</h1>
-    <div>
-      <%= form_with url: places_path, method: :get, class: "d-flex", id:"search-home-div" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",id:"search-home",
-          placeholder: "Find your next epic party venue!",
-          data: { controller: 'typed-js', action: "focus->typed-js#stopTyping click->typed-js#stopTyping"}
-        %>
-        <%= submit_tag "PARTY HARD", class: "btn btn-ghost-search-home" %>
-      <% end %>
-    </div>
+    <%= form_with url: places_path, method: :get, id:"search-home-div" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",id:"search-home",
+        placeholder: "Find your next epic party venue!",
+        data: { controller: 'typed-js', action: "focus->typed-js#stopTyping click->typed-js#stopTyping"}
+      %>
+      <%= submit_tag "PARTY HARD", class: "btn btn-ghost-search-home" %>
+    <% end %>
   </div>
 
 </div>
